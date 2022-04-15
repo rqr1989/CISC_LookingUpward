@@ -3,8 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-
+  
 {
+    private float jumpHeaight;
+    private float terminalVelocity = 1000;
+    private float gravity;
+    private float gravityComponent;
+
+    private PlayerInput playerInput;
+        private CharacterController characterController;
+    private Animator animator;
+
     //set player walk speed
     public float speed = 200.0f;
 
@@ -21,8 +30,10 @@ public class PlayerMovement : MonoBehaviour
 
     //sets Jump equal to 12
     public float Jump = 12.0f;
-    void Start()
+    private void Awake()
     {
+        playerInput = GetComponent<PlayerInput>();
+        characterController = GetComponent<CharacterController>();
         //get rigidBody2d 
         body = GetComponent<Rigidbody2D>();
 
@@ -113,6 +124,15 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(Mathf.Sign(deltaX), 1, 1);
         }
-    }
-   
+        //add Wall Jump
+         void wallJump()
+    {
+            //is  collider against player on either side and player is in midair
+            //player can  press space to jump using the wall 
+
+
+
+        }
+}
+  
 }

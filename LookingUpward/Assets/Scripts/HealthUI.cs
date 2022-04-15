@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthUI : MonoBehaviour
 {
+    //public ima
     // Start is called before the first frame update
     void Start()
     {
