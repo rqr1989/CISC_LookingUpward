@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - pick_up
+  - pickup_health
+  - pickup_Madness
+  - portal
   layers:
   - Default
   - TransparentFX
