@@ -26,5 +26,20 @@ public class PlayerAttack : MonoBehaviour
     {
         anim.SetTrigger("attack");
         cooldownTimer = 0;
+
+        //make sure projectile fires in curret direction
+        magicProjectiles[FindMagicProjectile()].transform.position = firePoint.position;
+        magicProjectiles[FindMagicProjectile()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+        //pool magic projectiles
+    }
+
+    private int FindMagicProjectile()
+    {
+        for(int i =0; i< magicProjectiles.Length; i++)
+        {
+            if (!magicProjectiles[i].activeInHierarchy)
+                return i;
+        }
+        return 0;
     }
 }
