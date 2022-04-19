@@ -33,12 +33,13 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
+
         characterController = GetComponent<CharacterController>();
         //get rigidBody2d 
         body = GetComponent<Rigidbody2D>();
 
         //get player animation
-        playerAnimate = GetComponent<Animator>();
+      //  playerAnimate = GetComponent<Animator>();
 
         box = GetComponent<BoxCollider2D>();
     }
@@ -62,18 +63,18 @@ public class PlayerMovement : MonoBehaviour
         Collider2D hit = Physics2D.OverlapArea(corner1, corner2);
        
         //creates bool grounded and setes it to false
-        bool grounded = false;
+        //bool grounded = false;
        
         //if a collider is underneath the player
         if(hit != null)
         {//player is on solid ground
-            grounded = true;
+       //     grounded = true;
         }
         //checks that player is on grounded and not moving 
-        body.gravityScale = grounded && deltaX == 0 ? 0 : 1;
+        body.gravityScale = isGrounded() && deltaX == 0 ? 0 : 1;
 
         //if space key is pressed down
-        if (grounded && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             //makes player jump upwards multiplied by the value of Jump
             body.AddForce(Vector2.up * Jump, ForceMode2D.Impulse);
@@ -134,5 +135,9 @@ public class PlayerMovement : MonoBehaviour
 
         }
 }
+    private bool isGrounded()
+    {
+        return false;
+    }
   
 }

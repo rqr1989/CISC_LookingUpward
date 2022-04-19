@@ -8,6 +8,7 @@ TagManager:
   - pickup_health
   - pickup_Madness
   - portal
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Ground
+  - Wall
   - 
   - 
   - 
