@@ -10,8 +10,9 @@ public class GameManager : MonoBehaviour
     public string MainMenu;
 
     public bool playerwins; //boolean to determine if player won
-                            // Start is called before the first frame update
-                            // LoadGameScene method
+                            
+                          
+    // LoadGameScene method
     public void LoadGameScene()
     {
 

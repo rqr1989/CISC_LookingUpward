@@ -12,7 +12,8 @@ public class NewPlayerMovement : MonoBehaviour
     private Animator playerAnim;
 
     //set player walk speed
-    [SerializeField] public float speed = 10.0f;
+    [SerializeField] public float speed;
+    [SerializeField] public float Runspeed;
     [SerializeField] public float jumpPower;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
@@ -31,11 +32,12 @@ public class NewPlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
         box = GetComponent<BoxCollider2D>();
+        Runspeed = speed * 1.5f;
     }
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-     //   body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
+    
 
         //flip player when moving left and right
         if (horizontalInput > 0.01f)
@@ -46,7 +48,13 @@ public class NewPlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-
+        
+        //while R is pressed down player speed is set to Runspeed
+        while (Input.GetKey(KeyCode.R))
+        {
+            speed = Runspeed;
+        }
+        
 
         //set animator pameter, if player is pressing right or left arrow, walk animation is true
         playerAnim.SetBool("walking", horizontalInput != 0);
@@ -121,12 +129,3 @@ public class NewPlayerMovement : MonoBehaviour
         return horizontalInput == 0 && isGrounded() && !onWall();
     }
 }
-/**
- *   private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Ground")
-        {
-            isGrounded();
-        }
-    }
-**/

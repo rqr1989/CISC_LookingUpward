@@ -9075,19 +9075,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingMadness: 4
   startingHealth: 3
---- !u!114 &1747101943
+--- !u!114 &1747101938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747101935}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff4dd070e31736447a9d8309cbb059e9, type: 3}
+  m_Script: {fileID: 11500000, guid: f24f5333927c14340bdd35d9c6ba5f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingMadness: 4
 --- !u!1 &1747901423
 GameObject:
   m_ObjectHideFlags: 0
@@ -11807,7 +11806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7887590602450875391, guid: 8f99c69a0fec7c14ba21467e20229569, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7887590602450875391, guid: 8f99c69a0fec7c14ba21467e20229569, type: 3}
       propertyPath: m_SortingLayerID
