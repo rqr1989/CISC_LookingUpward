@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class GameSceneManager : MonoBehaviour
 {
+   
     public static GameSceneManager Instance;
     public float uiLoadTime = 0.5f;
     private AsyncOperation asynOperation;
+    
 
     private void Awake()
     {
-
+        
         if (Instance == null)
         {
             Instance = this;
@@ -21,6 +25,7 @@ public class GameSceneManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
 
     }
 
