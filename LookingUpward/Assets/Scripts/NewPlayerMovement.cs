@@ -49,30 +49,31 @@ public class NewPlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
         
-        //while R is pressed down player speed is set to Runspeed
-        while (Input.GetKey(KeyCode.R))
-        {
-            speed = Runspeed;
-        }
+     
         
 
         //set animator pameter, if player is pressing right or left arrow, walk animation is true
         playerAnim.SetBool("walking", horizontalInput != 0);
         
         playerAnim.SetBool("grounded", isGrounded());
+        //while R is pressed down player speed is set to Runspeed
+        if(Input.GetKey(KeyCode.R))
+        {
+            body.velocity = new Vector2(Input.GetAxis("Horizontal") * Runspeed, body.velocity.y);
 
+        }
         if (wallJumpCooldown > 0.2f)
         {
            
             body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
 
-            if (onWall() && !isGrounded())
+            if (onWall() && !isGrounded())// player is on a wall and not grounded
             {
-                body.gravityScale = 0;
+                body.gravityScale = 0;//sets gravity to 0
                 body.velocity = Vector2.zero;
             }
             else
-                body.gravityScale = 3;
+                body.gravityScale = 3; //sets player gravity back to noraml
 
             if (Input.GetKeyDown(KeyCode.Space))
 
@@ -85,16 +86,16 @@ public class NewPlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if(isGrounded())
+        if(isGrounded()) //if player is on the ground
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
 
-            playerAnim.SetTrigger("jump");
+            playerAnim.SetTrigger("jump"); //activates jump animation
         }
        //if onwall and not on the ground
          else if (onWall() && !isGrounded())
         {
-            if(horizontalInput == 0)
+            if(horizontalInput == 0) 
             {
                 body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 0);
                 transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x), transform.localScale.y, transform.localScale.z);

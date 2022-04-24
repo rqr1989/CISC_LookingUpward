@@ -34,7 +34,7 @@ public class GameOver : MonoBehaviour
 
 
     }
-    void TurnOnGameOver()
+    public void TurnOnGameOver()
     {
         Time.timeScale = 0; //pause time in the game
         GameOverMenuOnOff.SetActive(true); //turn on Game Over Menu

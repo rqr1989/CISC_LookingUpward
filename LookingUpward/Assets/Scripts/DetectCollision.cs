@@ -4,57 +4,46 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-   public int score = 0;
+    public int score;
     public int currentscore;
-    private PlayerHealth playerHealth;
-    // Start is called before the first frame update
+  
+    [SerializeField] private int ScoreValue;
+
+    private HighScore highscore;
 
     private void Awake()
     {
-        playerHealth = GetComponent<PlayerHealth>();
+        currentscore = 0;
+        score = 0;
+        ScoreValue = 1;
     }
-  
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.tag == "Player")
+        {
+       collision.GetComponent<HighScore>().AddScore();
+
+           // highscore.AddScore();
+            gameObject.SetActive(false);
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void Update()
     {
-        string tag = collision.collider.gameObject.tag;
-        //if player collides with an object that has the tag pickup_health
-        if(tag == "pickup_health")
-        {
-            //object destroyed upon collision
-            Destroy(collision.collider.gameObject);
-
-            //calls addHealth method and adds 1 to player health is below the upper limit
-           // NewplayerHealth.AddHealth();
-        }
-
-        else if (tag == "pickup_Madness") // if player collides with object with the pickup_Madness tag
-        {
-            Destroy(collision.collider.gameObject); //destroys object
-
-            //add 1 to madness if below the upper limit
-         //   playerHealth.AddMadness();
-        // HealthSystem.
-
-        }
-        //if player collides with object with pick_up tag
-        else if (tag == "pick_up")
-        {
-            Destroy(collision.collider.gameObject);// destorys object
-
-            score += 1; //add 1 to score
-
-        }
+        Debug.Log("the score is" + currentscore);
     }
+
     public void CurrentScore()
     {
         score = currentscore;
     }
-
+    public void AddScore(int _value)
+    {
+        currentscore = score + _value;
+        Debug.Log("the score is" + currentscore);
+        score = currentscore;
+    }
 }
