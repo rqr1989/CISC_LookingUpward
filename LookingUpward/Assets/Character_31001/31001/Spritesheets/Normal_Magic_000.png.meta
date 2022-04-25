@@ -1,0 +1,528 @@
+fileFormatVersion: 2
+guid: 1e06fa63e521d9949adb6613762e591b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: 10000
+  - first:
+      213: 21300002
+    second: 10001
+  - first:
+      213: 21300004
+    second: 10002
+  - first:
+      213: 21300006
+    second: 10003
+  - first:
+      213: 21300008
+    second: 10004
+  - first:
+      213: 21300010
+    second: 10005
+  - first:
+      213: 21300012
+    second: 10006
+  - first:
+      213: 21300014
+    second: 10007
+  - first:
+      213: 21300016
+    second: 10008
+  - first:
+      213: 21300018
+    second: 10009
+  - first:
+      213: 21300020
+    second: 10010
+  - first:
+      213: 21300022
+    second: 10011
+  - first:
+      213: 21300024
+    second: 10012
+  - first:
+      213: 21300026
+    second: 10013
+  - first:
+      213: 21300028
+    second: 10014
+  - first:
+      213: 21300030
+    second: 10015
+  - first:
+      213: 7450592491442599632
+    second: Normal_Magic_000_0
+  - first:
+      213: -1072502356769552946
+    second: Normal_Magic_000_1
+  - first:
+      213: 3560323612812262506
+    second: Normal_Magic_000_2
+  - first:
+      213: -7395987834165345854
+    second: Normal_Magic_000_3
+  - first:
+      213: -92706638699135608
+    second: Normal_Magic_000_4
+  - first:
+      213: 1699164051707838377
+    second: Normal_Magic_000_5
+  - first:
+      213: 2357554118381258067
+    second: Normal_Magic_000_6
+  - first:
+      213: -8735319248855019591
+    second: Normal_Magic_000_7
+  - first:
+      213: 5421997665568498477
+    second: Normal_Magic_000_8
+  - first:
+      213: -8629950878036810910
+    second: Normal_Magic_000_9
+  - first:
+      213: 6595922867604958585
+    second: Normal_Magic_000_10
+  - first:
+      213: -2300713622125798341
+    second: Normal_Magic_000_11
+  - first:
+      213: 4335237493390524290
+    second: Normal_Magic_000_12
+  - first:
+      213: 2219506329229501075
+    second: Normal_Magic_000_13
+  - first:
+      213: -7407943861045098931
+    second: Normal_Magic_000_14
+  - first:
+      213: 2842940538765993967
+    second: Normal_Magic_000_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Normal_Magic_000_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 329
+        width: 85
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6f0a26562d56760800000000000000
+      internalID: 7450592491442599632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_1
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 334
+        width: 87
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec54bf3f9c4bd11f0800000000000000
+      internalID: -1072502356769552946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_2
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 342
+        width: 85
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c3c13667fc86130800000000000000
+      internalID: 3560323612812262506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_3
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 424
+        width: 97
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1c67d104c2c5990800000000000000
+      internalID: -7395987834165345854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_4
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 335
+        width: 92
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d7404adc3a6bef0800000000000000
+      internalID: -92706638699135608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_5
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 132
+        width: 68
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9afb825d3b4a49710800000000000000
+      internalID: 1699164051707838377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 136
+        width: 67
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 355cfd4daf6b7b020800000000000000
+      internalID: 2357554118381258067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_7
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 148
+        width: 83
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf4d54cc69e5c680800000000000000
+      internalID: -8735319248855019591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_8
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 167
+        width: 75
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23253d562ece3b40800000000000000
+      internalID: 5421997665568498477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_9
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 240
+        width: 83
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 263ab8d56614c3880800000000000000
+      internalID: -8629950878036810910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_10
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 74
+        width: 72
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d2871c6ec698b50800000000000000
+      internalID: 6595922867604958585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_11
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 143
+        width: 72
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c1a4f76293210e0800000000000000
+      internalID: -2300713622125798341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 23
+        width: 78
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f3f7af78bd92c30800000000000000
+      internalID: 4335237493390524290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_13
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 13
+        width: 72
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 392a47a3f354dce10800000000000000
+      internalID: 2219506329229501075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_14
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 26
+        width: 71
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d460f5eae42b13990800000000000000
+      internalID: -7407943861045098931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Magic_000_15
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 38
+        width: 72
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe764b28b57247720800000000000000
+      internalID: 2842940538765993967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c8470b1087a0e0d4aa8d0b047c647537
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

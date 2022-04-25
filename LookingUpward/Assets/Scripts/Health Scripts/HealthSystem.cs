@@ -50,9 +50,15 @@ public class HealthSystem : MonoBehaviour
             {
                 //player dead
                 anim.SetTrigger("Die");
-                GetComponentInChildren<NewPlayerMovement>().enabled = false;
+                //diable player movement
+                GetComponent<NewPlayerMovement>().enabled = false;
                 dead = true;
-                gameover.TurnOnGameOver();
+
+
+              /**  if (dead == true)
+                {
+                    gameover.TurnOnGameOver();
+                }**/
             }
           
         }
@@ -71,7 +77,9 @@ public class HealthSystem : MonoBehaviour
             {
                 //player dead
                 anim.SetTrigger("Die");
-                GetComponentInChildren<NewPlayerMovement>().enabled = false;
+
+                if (GetComponent<NewPlayerMovement>() != null)
+                    GetComponent<NewPlayerMovement>().enabled = false;
                 dead = true;
             }
 
