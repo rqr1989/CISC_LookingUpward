@@ -124,4 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   currentscore: 0
-  ScoreValue: 0
+  ScoreValue: 1
+  gemPickUpSound: {fileID: 8300000, guid: 6cd23ab84b663744f9c6c673aaa77841, type: 3}

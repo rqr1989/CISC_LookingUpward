@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7887590602450875388}
   - component: {fileID: 3943910728604270099}
   - component: {fileID: 8961773895425216151}
+  - component: {fileID: 5332771724082751844}
   m_Layer: 5
   m_Name: Player
   m_TagString: Player
@@ -152,15 +153,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81012e921aa09d844aceaf69b641f932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  speed: 15
   Runspeed: 0
   jumpPower: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+  jumpSound: {fileID: 8300000, guid: 258f3f2df2e4c8540b3b0f567593e673, type: 3}
 --- !u!95 &7887590602450875388
 Animator:
   serializedVersion: 3
@@ -195,6 +197,7 @@ MonoBehaviour:
   score: 0
   currentscore: 0
   ScoreValue: 1
+  gemPickUpSound: {fileID: 0}
 --- !u!114 &8961773895425216151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +211,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingMadness: 4
-  startingHealth: 0
-  invincibleDur: 0
-  numberOfFlashes: 0
+  startingHealth: 3
+  invincibleDur: 1
+  numberOfFlashes: 2
+  deathSound: {fileID: 8300000, guid: 03fde2a5292dc5044a5e77177255b9f2, type: 3}
+  hurtSound: {fileID: 8300000, guid: 03d8db8d14486564aa6e810968681ca3, type: 3}
+--- !u!114 &5332771724082751844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7887590602450875387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d258bb0a48c90af4c99315109c9b8c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 0.25
+  firePoint: {fileID: 0}
+  magicProjectiles: []
+  magicSound: {fileID: 8300000, guid: 6efe3e4fcf3bd5a41961df55d99eda00, type: 3}
+  attackSound: {fileID: 8300000, guid: 55d1c0cb6ea19aa439f72c49ca10d768, type: 3}

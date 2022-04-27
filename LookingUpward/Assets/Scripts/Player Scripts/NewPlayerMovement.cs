@@ -10,13 +10,22 @@ public class NewPlayerMovement : MonoBehaviour
   
     // refernce to player animation
     private Animator playerAnim;
-
+    [Header("Player Movement")]
     //set player walk speed
     [SerializeField] public float speed;
     [SerializeField] public float Runspeed;
     [SerializeField] public float jumpPower;
+
+    [Header("Multiple Jumps")]
+    [SerializeField] private int extraJumps;
+    private int jumpCounter;
+
+    [Header("Layers")]
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
+
+
+    [Header("Other")]
     //reference to boxCollider 2D
     private BoxCollider2D box;
     private float wallJumpCooldown;
@@ -55,42 +64,48 @@ public class NewPlayerMovement : MonoBehaviour
         playerAnim.SetBool("walking", horizontalInput != 0);
         
         playerAnim.SetBool("grounded", isGrounded());
+
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+        //adjust jump height
+        if(Input.GetKeyUp(KeyCode.Space) && body.velocity.y >0)
+        {
+            body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
+        }
+
+        if(onWall())
+        {
+            body.gravityScale = 0;
+            body.velocity = Vector2.zero;
+        }
+
+        else
+        {
+            body.gravityScale = 7;
+            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        }
+
         //while R is pressed down player speed is set to Runspeed
-        if(Input.GetKey(KeyCode.R))
+       /** if(Input.GetKey(KeyCode.R))
         {
             body.velocity = new Vector2(Input.GetAxis("Horizontal") * Runspeed, body.velocity.y);
 
-        }
-        if (wallJumpCooldown > 0.2f)
-        {
-           
-            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
-
-            if (onWall() && !isGrounded())// player is on a wall and not grounded
-            {
-                body.gravityScale = 0;//sets gravity to 0
-                body.velocity = Vector2.zero;
-            }
-            else
-                body.gravityScale = 3; //sets player gravity back to noraml
-
-            if (Input.GetKeyDown(KeyCode.Space))
-
-                Jump();
-        }
-        else
-            wallJumpCooldown += Time.deltaTime;
+        } **/
+      
     }
         
 
     private void Jump()
     {
-        if(isGrounded()) //if player is on the ground
+        if(!onWall() && jumpCounter <=0) //if player is on the ground
         {
-            SoundManager.instance.PlaySound(jumpSound);
+          
             body.velocity = new Vector2(body.velocity.x, jumpPower);
-
-            playerAnim.SetTrigger("jump"); //activates jump animation
+            SoundManager.instance.PlaySound(jumpSound);
+            //  playerAnim.SetTrigger("jump"); //activates jump animation
         }
        //if onwall and not on the ground
          else if (onWall() && !isGrounded())

@@ -46,7 +46,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth > 0)
         {
-            anim.SetTrigger("hurt");
+            anim.SetTrigger("hit");
            
             StartCoroutine(Invuneribility());
             SoundManager.instance.PlaySound(hurtSound);
@@ -56,7 +56,7 @@ public class EnemyHealth : MonoBehaviour
             if (!dead)
             {
               
-                anim.SetTrigger("Die");
+                anim.SetTrigger("EnemyDie");
 
            
                //deactivate attacjed components
