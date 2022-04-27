@@ -10,6 +10,7 @@ TagManager:
   - portal
   - Ground
   - Enemy
+  - WinLevel
   layers:
   - Default
   - TransparentFX

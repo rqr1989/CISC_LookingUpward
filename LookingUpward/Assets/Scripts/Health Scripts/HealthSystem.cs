@@ -23,6 +23,8 @@ public class HealthSystem : MonoBehaviour
 
     private SpriteRenderer spriteRend;
     private GameOver gameover;
+    [Header("Components")]
+    [SerializeField] private Behaviour[] components;
     [Header("Death Sound")]
     [SerializeField] private AudioClip deathSound;
     [Header("Hurt Sound")]
@@ -52,17 +54,21 @@ public class HealthSystem : MonoBehaviour
         {
             if(!dead)
             {
-                //player dead
-                anim.SetTrigger("Die");
-                //diable player movement
-                GetComponent<NewPlayerMovement>().enabled = false;
-                dead = true;
 
-
-              /**  if (dead == true)
+                //deactivate attacjed components
+                foreach (Behaviour component in components)
                 {
-                    gameover.TurnOnGameOver();
-                }**/
+                    component.enabled = false;
+                }
+
+
+                //player dead
+                anim.SetBool("grounded", true);
+                anim.SetTrigger("Die");
+                dead = true;
+                SoundManager.instance.PlaySound(deathSound);
+
+
             }
           
         }
@@ -79,17 +85,21 @@ public class HealthSystem : MonoBehaviour
         {
             if (!dead)
             {
-                //player dead
-                anim.SetTrigger("Die");
+                //deactivate attacjed components
+                foreach (Behaviour component in components)
+                {
+                    component.enabled = false;
+                }
 
-                if (GetComponent<NewPlayerMovement>() != null)
-                    GetComponent<NewPlayerMovement>().enabled = false;
+
+                //player dead
+                anim.SetBool("grounded", true);
+                anim.SetTrigger("Die");
                 dead = true;
                 SoundManager.instance.PlaySound(deathSound);
+
             }
-
-
-        }
+            }
     }
    public void AddHealth(float _value)
     {
@@ -100,7 +110,20 @@ public class HealthSystem : MonoBehaviour
     {
         currentMadness= Mathf.Clamp(currentMadness + _value, 0, startingMadness);
     }
+   public void Respawn()
+    {
+        dead = false;
+        //AddHealth(startingHealth);
+        anim.ResetTrigger("Die");
+        anim.Play("Idle");
+        StartCoroutine(Invuneribility());
+        //Activate attacjed components
+        foreach (Behaviour component in components)
+        {
+            component.enabled = true;
+        }
 
+    }
     private IEnumerator Invuneribility()
     {
         Physics2D.IgnoreLayerCollision(10, 11, true); //ignore collisions with onjects on layer 11(enemies)
@@ -115,11 +138,6 @@ public class HealthSystem : MonoBehaviour
         
         Physics2D.IgnoreLayerCollision(10, 11, false);
     }
-
-
-    // if player falls, respawn at respwan point and lose a life
-
-
 
 
 }

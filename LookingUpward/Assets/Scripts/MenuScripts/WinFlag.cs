@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class WinFlag : MonoBehaviour
 {
+   
     public string gameSceneName;
     public string MainMenu;
     public GameObject WinDialogue;
