@@ -158,3 +158,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8ef655d5028844999731fcde8e5297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCooldown: 1
+  range: 4
+  damage: 1
+  firepoint: {fileID: 0}
+  bloodProjectiles: []
+  colliderDistance: 0.4
+  box: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0

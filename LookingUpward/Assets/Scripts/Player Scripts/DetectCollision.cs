@@ -8,7 +8,7 @@ public class DetectCollision : MonoBehaviour
     public int currentscore;
   
     [SerializeField] private int ScoreValue;
-
+    [SerializeField] private AudioClip gemPickUpSound;
     private HighScore highscore;
 
     private void Awake()
@@ -24,7 +24,8 @@ public class DetectCollision : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-       collision.GetComponent<HighScore>().AddScore();
+            SoundManager.instance.PlaySound(gemPickUpSound);
+            collision.GetComponent<HighScore>().AddScore();
 
            // highscore.AddScore();
             gameObject.SetActive(false);

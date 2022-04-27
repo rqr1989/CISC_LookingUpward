@@ -12,15 +12,16 @@ public class MagicEnemy : MonoBehaviour
     [Header("Range Attack")]
     [SerializeField] private Transform firepoint;
     [SerializeField] private GameObject[] bloodProjectiles;
+
     [Header("Collider Parameters")]
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D box;
+
     [Header("Player Layer")]
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
+    [SerializeField] private AudioClip enemyMagicSound;
 
-
-    private HealthSystem playerHealth;
     private Animator anim;
     private EnemyPatrol enemypatrol;
     private void Awake()
@@ -39,8 +40,9 @@ public class MagicEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
 
-                anim.SetTrigger("magicAttack");
-                //attack
+                anim.SetTrigger("magicAttack");  //attack
+                SoundManager.instance.PlaySound(enemyMagicSound);
+
             }
         }
         //disables patrol when player is in sight
@@ -55,10 +57,7 @@ public class MagicEnemy : MonoBehaviour
            new Vector3(box.bounds.size.x * range, box.bounds.size.y, box.bounds.size.z),
             0, Vector2.left, 0, playerLayer);
 
-     /**   if (hit.collider != null)
-        {
-            playerHealth = hit.transform.GetComponent<HealthSystem>();
-        }**/
+   
         return hit.collider != null;
     }
 
@@ -70,9 +69,11 @@ public class MagicEnemy : MonoBehaviour
     }
     private void RangedAttack()
     {
+        
         cooldownTimer = 0;
+        //find and shoot projectile
         bloodProjectiles[FindBloodProjectile()].transform.position = firepoint.position;
-       // bloodProjectiles[FindBloodProjectile()].GetComponent<EnemyProjectile>().ActivateProjectile();
+       bloodProjectiles[FindBloodProjectile()].GetComponent<EnemyProjectile>().ActivateProjectile();
 
     }
     private int FindBloodProjectile()

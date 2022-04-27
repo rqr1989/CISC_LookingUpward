@@ -6,6 +6,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] magicProjectiles;
+    [SerializeField] private AudioClip magicSound;
+    [SerializeField] private AudioClip attackSound;
+
     private Animator anim;
     private NewPlayerMovement newplayerMovement;
     private float cooldownTimer = Mathf.Infinity;
@@ -29,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
     //triggers magic animation, access magic projectiles list and activates a projectile starting at the firePoint
     private void MagicAttack()
     {
+        SoundManager.instance.PlaySound(magicSound);
         anim.SetTrigger("magic");
         cooldownTimer = 0;
 
@@ -41,6 +45,7 @@ public class PlayerAttack : MonoBehaviour
     }
     private void MeleeAttack()
     {
+        SoundManager.instance.PlaySound(attackSound);
         anim.SetTrigger("attack");
 
         //if magic projectile collides with object with the tag enemy, enemy should be damaged/ destroyed

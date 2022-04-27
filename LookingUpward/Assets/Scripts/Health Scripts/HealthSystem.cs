@@ -23,7 +23,10 @@ public class HealthSystem : MonoBehaviour
 
     private SpriteRenderer spriteRend;
     private GameOver gameover;
-    // Start is called before the first frame update
+    [Header("Death Sound")]
+    [SerializeField] private AudioClip deathSound;
+    [Header("Hurt Sound")]
+    [SerializeField] private AudioClip hurtSound;
     private void Awake()
     {
         currentHealth = startingHealth; //set startingHealth equal to currentHealth
@@ -41,8 +44,9 @@ public class HealthSystem : MonoBehaviour
         if(currentHealth > 0)
         {
             anim.SetTrigger("hurt");
-
+         
             StartCoroutine(Invuneribility());
+            SoundManager.instance.PlaySound(hurtSound);
         }
         else
         {
@@ -81,6 +85,7 @@ public class HealthSystem : MonoBehaviour
                 if (GetComponent<NewPlayerMovement>() != null)
                     GetComponent<NewPlayerMovement>().enabled = false;
                 dead = true;
+                SoundManager.instance.PlaySound(deathSound);
             }
 
 

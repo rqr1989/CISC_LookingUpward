@@ -14,7 +14,7 @@ public class MeleeEnemy : MonoBehaviour
     [Header("Player Layer")]
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
-
+    [SerializeField] private AudioClip enemyAttackSound;
     private HealthSystem playerHealth;
     private Animator anim;
 
@@ -32,12 +32,12 @@ public class MeleeEnemy : MonoBehaviour
         // if player is within sight of the enemy
         if(PlayerInSight())
         {
-            if(cooldownTimer >= attackCooldown)
+            if(cooldownTimer >= attackCooldown && playerHealth.currentHealth > 0)
             {
                 cooldownTimer = 0;
 
-                anim.SetTrigger("meleeAtttack");
-                //attack
+                anim.SetTrigger("meleeAtttack");  //calls attack anmation
+                SoundManager.instance.PlaySound(enemyAttackSound);
             }
         }
         //disables patrol when player is in sight

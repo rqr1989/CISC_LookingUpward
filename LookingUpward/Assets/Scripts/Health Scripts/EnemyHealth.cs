@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Health")]
@@ -21,6 +22,13 @@ public class EnemyHealth : MonoBehaviour
 
     private SpriteRenderer spriteRend;
     private GameOver gameover;
+
+    [Header("Components")]
+   [SerializeField] private Behaviour[] components;
+    [Header("Death Sound")]
+    [SerializeField] private AudioClip deathSound;
+    [Header("Hurt Sound")]
+    [SerializeField] private AudioClip hurtSound;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -39,8 +47,9 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth > 0)
         {
             anim.SetTrigger("hurt");
-
+           
             StartCoroutine(Invuneribility());
+            SoundManager.instance.PlaySound(hurtSound);
         }
         else
         {
@@ -49,14 +58,16 @@ public class EnemyHealth : MonoBehaviour
               
                 anim.SetTrigger("Die");
 
-            //    if(GetComponent<NewPlayerMovement>() !=null)
-             //   GetComponent<NewPlayerMovement>().enabled = false;
-                if(GetComponentInParent<EnemyPatrol>() !=null)
-                GetComponentInParent<EnemyPatrol>().enabled = false;
+           
+               //deactivate attacjed components
+                foreach (Behaviour component in components)
+                {
+                    component.enabled = false;
+                }
 
-                if (GetComponent<MeleeEnemy>() != null)
-                    GetComponent<MeleeEnemy>().enabled = false;
+
                 dead = true;
+                    SoundManager.instance.PlaySound(deathSound);
                
             }
 
@@ -86,9 +97,9 @@ public class EnemyHealth : MonoBehaviour
     }
 
 
-    // if player falls, respawn at respwan point and lose a life
-
-
+   private void Deactivate()
+    { gameObject.SetActive(false); }
+       
 
 
 }

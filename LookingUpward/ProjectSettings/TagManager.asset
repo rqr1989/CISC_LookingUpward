@@ -9,6 +9,7 @@ TagManager:
   - pickup_Madness
   - portal
   - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX

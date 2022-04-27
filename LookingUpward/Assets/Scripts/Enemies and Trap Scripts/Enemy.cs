@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float movementDistance;
-    [SerializeField] private float speed;
+    [SerializeField] private float speed; 
     [SerializeField] private float damage;
     private bool movingLeft;
     private float leftEdge;

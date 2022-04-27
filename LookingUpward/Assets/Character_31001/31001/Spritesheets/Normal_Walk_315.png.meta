@@ -26,6 +26,30 @@ TextureImporter:
   - first:
       213: 21300014
     second: 10007
+  - first:
+      213: 9105478087654640920
+    second: Normal_Walk_315_0
+  - first:
+      213: 8434352018617845223
+    second: Normal_Walk_315_1
+  - first:
+      213: 3984589999022065651
+    second: Normal_Walk_315_2
+  - first:
+      213: -3268163286836440425
+    second: Normal_Walk_315_3
+  - first:
+      213: -6971401905130740723
+    second: Normal_Walk_315_4
+  - first:
+      213: 618969052825499153
+    second: Normal_Walk_315_5
+  - first:
+      213: -3999147611148678641
+    second: Normal_Walk_315_6
+  - first:
+      213: -1019852230669510441
+    second: Normal_Walk_315_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -47,6 +71,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -78,9 +103,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
@@ -99,169 +127,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 10000
+      name: Normal_Walk_315_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 131
-        width: 89
-        height: 92
-      alignment: 9
-      pivot: {x: 0.5730337, y: 0.18478261}
+        x: 17
+        y: 430
+        width: 91
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e419501303b7157a0800000000000000
-      internalID: 21300000
+      spriteID: 81d02cce3182d5e70800000000000000
+      internalID: 9105478087654640920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10001
+      name: Normal_Walk_315_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 424
-        width: 118
-        height: 87
-      alignment: 9
-      pivot: {x: 0.59322035, y: -0.022988506}
+        x: 125
+        y: 428
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8f2b9c5153388c590800000000000000
-      internalID: 21300002
+      spriteID: 7e5c05c4976dc0570800000000000000
+      internalID: 8434352018617845223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10002
+      name: Normal_Walk_315_2
       rect:
         serializedVersion: 2
-        x: 121
-        y: 424
-        width: 108
-        height: 87
-      alignment: 9
-      pivot: {x: 0.4814815, y: -0.12643678}
+        x: 9
+        y: 335
+        width: 85
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1e93904061bbee9c0800000000000000
-      internalID: 21300004
+      spriteID: 3f7c84b2e7b1c4730800000000000000
+      internalID: 3984589999022065651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10003
+      name: Normal_Walk_315_3
       rect:
         serializedVersion: 2
-        x: 101
-        y: 323
-        width: 96
-        height: 99
-      alignment: 9
-      pivot: {x: 0.47916666, y: -0.16161616}
+        x: 106
+        y: 327
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a7ba8237863525fb0800000000000000
-      internalID: 21300006
+      spriteID: 792142c5ec625a2d0800000000000000
+      internalID: -3268163286836440425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10004
+      name: Normal_Walk_315_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 32
-        width: 88
-        height: 97
-      alignment: 9
-      pivot: {x: 0.45454547, y: -0.17525773}
+        x: 7
+        y: 230
+        width: 76
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6067c891155791310800000000000000
-      internalID: 21300008
+      spriteID: d04633247ea904f90800000000000000
+      internalID: -6971401905130740723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10005
+      name: Normal_Walk_315_5
       rect:
         serializedVersion: 2
-        x: 97
-        y: 214
-        width: 89
-        height: 107
-      alignment: 9
-      pivot: {x: 0.5168539, y: -0.056074765}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 76d82a5c7e71f4300800000000000000
-      internalID: 21300010
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 10006
-      rect:
-        serializedVersion: 2
-        x: 1
+        x: 105
         y: 225
-        width: 94
-        height: 105
-      alignment: 9
-      pivot: {x: 0.5212766, y: -0.057142857}
+        width: 73
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 41bea87ffcf045450800000000000000
-      internalID: 21300012
+      spriteID: 116bf98f215079800800000000000000
+      internalID: 618969052825499153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10007
+      name: Normal_Walk_315_6
       rect:
         serializedVersion: 2
-        x: 1
-        y: 332
-        width: 98
-        height: 90
-      alignment: 9
-      pivot: {x: 0.6122449, y: -0.08888889}
+        x: 3
+        y: 139
+        width: 83
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 50ad1df4d9a257df0800000000000000
-      internalID: 21300014
+      spriteID: f0a8121af6c2088c0800000000000000
+      internalID: -3999147611148678641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal_Walk_315_7
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 36
+        width: 75
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8dd83bcc1c8d1f0800000000000000
+      internalID: -1019852230669510441
       vertices: []
       indices: 
       edges: []
@@ -269,7 +297,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4bad8622581f99248807cb1e61dc261d
     internalID: 0
     vertices: []
     indices: 

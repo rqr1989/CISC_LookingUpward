@@ -21,10 +21,9 @@ public class NewPlayerMovement : MonoBehaviour
     private BoxCollider2D box;
     private float wallJumpCooldown;
     private float horizontalInput;
-    //private PlayerInput playerInput;
-    //sets Jump equal to 12
-   // public float Jumpheight = 12.0f;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip jumpSound;
     private void Awake()
     {
         //playerInput = GetComponent<PlayerInput>();
@@ -88,6 +87,7 @@ public class NewPlayerMovement : MonoBehaviour
     {
         if(isGrounded()) //if player is on the ground
         {
+            SoundManager.instance.PlaySound(jumpSound);
             body.velocity = new Vector2(body.velocity.x, jumpPower);
 
             playerAnim.SetTrigger("jump"); //activates jump animation
