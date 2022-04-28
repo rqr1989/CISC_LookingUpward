@@ -28,5 +28,7 @@ public class GameManager : MonoBehaviour
 
         GameSceneManager.Instance.LoadScene(MainMenu);
     }
+ 
+  
 
 }

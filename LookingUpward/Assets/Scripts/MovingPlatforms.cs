@@ -5,39 +5,66 @@ using UnityEngine;
 public class MovingPlatforms : MonoBehaviour
 {
 
+    [SerializeField] private Transform rightedge;
+    [SerializeField] private Transform leftedge;
 
-    public Vector3 endingPosition = Vector3.zero;
-    public float speed = 0.7f; //platfrom movement speed
+    [Header("Platform")]
+    [SerializeField] private Transform platform;
 
-    private Vector3 startingPosition;
-    private float trackPosition = 0; //Where along the track the platform is currently
-
-    private int direction = 1; //direction platform is currently moving 
-
-
-    // Start is called before the first frame update
-    void Start()
+    [Header("Movement Parameters")]
+    [SerializeField] private float speed;
+    private Vector3 initScale;
+    private bool movingLeft;
+    [Header("Idle Time")]
+    [SerializeField] private float idleDuration;
+    private float idleTimer;
+    private void Awake()
     {
-        startingPosition = transform.position; //sets starting point equal to platforms placement in scene
+        initScale = platform.localScale;
     }
 
-    // Update is called once per frame
+    //Adapt for vertical moving platform
     void Update()
     {
+        if (movingLeft)
+        {
+            if (platform.position.x >= leftedge.position.x)
+            {
+                MoveInDirection(-1);
+            }
+            else
+            {
+                //change direction
+                DirectionChange();
+            }
 
-        trackPosition += direction * speed * Time.deltaTime;
-
-        float x = (endingPosition.x - startingPosition.x) * trackPosition + startingPosition.x;
-        float y = (endingPosition.y - startingPosition.y) * trackPosition + startingPosition.y;
-        transform.position = new Vector3(x, y, startingPosition.z);
-
-        //if platform has reached the edge of the track in either direction
-        if((direction ==1 && trackPosition >.9f) ||
-
-                (direction == -1 && trackPosition <.1f))
-                {
-            //reverse the direction the platform is moving in
-            direction *= -1;
         }
+        else
+           if (platform.position.x <= rightedge.position.x)
+        {
+            MoveInDirection(1);
+        }
+        else
+            //change direction
+            DirectionChange();
+    }
+    private void MoveInDirection(int _direction)
+    {
+        idleTimer = 0;
+
+        //makes enemy move in direction
+        platform.position = new Vector3(platform.position.x + Time.deltaTime * _direction * speed, platform.position.y, 
+             platform.position.z);
+    }
+
+    private void DirectionChange() //change direction of platform
+    {
+
+        idleTimer += Time.deltaTime;
+        if (idleTimer > idleDuration)
+        {
+            movingLeft = !movingLeft;
+        }
+
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Enemy
   - WinLevel
+  - Level1Complete
   layers:
   - Default
   - TransparentFX

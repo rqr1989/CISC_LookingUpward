@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class WinFlag : MonoBehaviour
 {
    
-    public string gameSceneName;
+   // public string gameSceneName;
     public string MainMenu;
     public GameObject WinDialogue;
     public Button main;
@@ -18,17 +18,11 @@ public class WinFlag : MonoBehaviour
         WinDialogue.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+   
+    public void winGame()
     {
-        if(gameWon == true)
-        {
-            Time.timeScale = 0; //pause time in the game
-            WinDialogue.SetActive(true);
-        }
-        else
-            
-        WinDialogue.SetActive(false);
+        Time.timeScale = 0; //pause time in the game
+        WinDialogue.SetActive(true);
     }
     public void loadMain()
     {

@@ -7,14 +7,15 @@ public class NewPlayerMovement : MonoBehaviour
 
     //refernce to player characters RigidBody2d component
     private Rigidbody2D body;
-    public GameObject LevelComplete;
+   // public GameObject LevelComplete;
+    //private WinFlag winflag;
 
     // refernce to player animation
     private Animator playerAnim;
     [Header("Player Movement")]
     //set player walk speed
     [SerializeField] public float speed; //player speed
-    [SerializeField] public float Runspeed; //player speed when running
+
     [SerializeField] public float jumpPower;
     private HealthSystem playerhealth;
     [SerializeField] public GameObject fallpoint;
@@ -40,12 +41,13 @@ public class NewPlayerMovement : MonoBehaviour
   [Header("Other")]
     //reference to boxCollider 2D
     private BoxCollider2D box;
-
+ //   [SerializeField] public GameObject winCondition; //player speed
     private float wallJumpCooldown;
     private float horizontalInput;
 
     [Header("SFX")]
     [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip winSound;
     private void Awake()
     {
         //playerInput = GetComponent<PlayerInput>();
@@ -54,7 +56,7 @@ public class NewPlayerMovement : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         portalAnim = GetComponent<Animator>();
         box = GetComponent<BoxCollider2D>();
-        Runspeed = speed * 1.5f;
+        
     }
     private void Update()
     {
@@ -80,8 +82,6 @@ public class NewPlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-
-
 
 
         //set animator pameter, if player is pressing right or left arrow, walk animation is true
@@ -122,7 +122,7 @@ public class NewPlayerMovement : MonoBehaviour
                 coyoteCounter -= Time.deltaTime;
             }
         }
-        falling();
+        falling(); //call falling method
        
     
     }
@@ -131,12 +131,14 @@ public class NewPlayerMovement : MonoBehaviour
     {
         if (collision.tag == "WinLevel")
         {
-            //play win sound
-            //show win dialouge
-          
+            SoundManager.instance.PlaySound(winSound);     //play win sound
+            collision.GetComponent<WinFlag>().winGame();   //show win dialouge
 
-            
         }
+        if (collision.tag == "Level1Complete")
+            SoundManager.instance.PlaySound(winSound);     //play win sound
+        collision.GetComponent<GameManager>().LoadGameScene();   //show win dialouge
+
     }
     //Jump Method
     private void Jump()
@@ -175,13 +177,13 @@ public class NewPlayerMovement : MonoBehaviour
 
 
     }
-    private void WallJump()
+    private void WallJump() //wall jump method
     {
         body.AddForce(new Vector2(-Mathf.Sign(transform.localScale.x) * wallJumpx, wallJumpy));
         wallJumpCooldown = 0; // set to 0
     }
 
-    private void falling()
+    private void falling() //falling method
     {
         if (body.transform.localScale.y < fallpoint.transform.localScale.y)
         {
@@ -190,14 +192,14 @@ public class NewPlayerMovement : MonoBehaviour
         }
 
 }
-private bool isGrounded()
+private bool isGrounded() //determines if player is on ground
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(box.bounds.center, box.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
        
         return raycastHit.collider != null;
     }
 
-    private bool onWall()
+    private bool onWall()//determines whether player is on wall
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(box.bounds.center, box.bounds.size, 0, new Vector2(transform.localScale.x,0), 0.1f, wallLayer);
 
@@ -211,17 +213,19 @@ private bool isGrounded()
     }
     private void Portal()
     {
-        //if player is at portalA and presses X, player is transported to portal b
-        if (body.transform.position == portalA.transform.position && Input.GetKeyDown(KeyCode.X))
-        {
-            body.transform.position = portalB.transform.position;
-              //portalAnim.Set
-        }
 
-       //if  player is at potalB and presses X, player is transported to portal A
-          if  (body.transform.position == portalB.transform.position && Input.GetKeyDown(KeyCode.X))
-            {
-            body.transform.position = portalB.transform.position;
-            }
-    }
+        //if player is at portalA and presses X, player is transported to portal b
+  if (body.transform.position == portalA.transform.position && Input.GetKeyDown(KeyCode.X))
+  {
+      body.transform.position = portalB.transform.position;
+        //portalAnim.Set
+  }
+
+ //if  player is at potalB and presses X, player is transported to portal A
+    if  (body.transform.position == portalB.transform.position && Input.GetKeyDown(KeyCode.X))
+      {
+      body.transform.position = portalB.transform.position;
+       
+}
+}
 }
