@@ -9,8 +9,9 @@ public class GameOver : MonoBehaviour
     public Button exitButton;
     public bool playerDead;
     public string gameSceneName;
-    
-    public DetectCollision detectcollision;
+    public Text pointsText;
+   
+  private DetectCollision detectcollision;
     public GameObject GameOverMenuOnOff;
     public static bool isGameOver = false;
     // Start is called before the first frame update
@@ -19,29 +20,26 @@ public class GameOver : MonoBehaviour
 
         GameOverMenuOnOff.SetActive(false);
         isGameOver = false;
+        mainMenu.onClick.AddListener(LoadGameScene); //main menu button loads main menu on click
+        exitButton.onClick.AddListener(OnApplicationQuit);
     }
-
-    // Update is called once per frame
-    void Update()
+   /** public void Setup(int score)
     {
-        if (playerDead == true)
-        {
-            //sets final score equal to score
-            finalscore =  detectcollision.score;
-           //calls TurnOnGameOverMethos
-            TurnOnGameOver();
-        }
-
-
+     score = detectcollision.CurrentScore();
+        gameObject.SetActive(true);
+        pointsText.text = score.ToString() + "Points";
     }
-    public void TurnOnGameOver()
+   **/
+
+    public void TurnOnGameOver(int score)
     {
+        //score = detectcollision.CurrentScore();
+        gameObject.SetActive(true);
+        pointsText.text = score.ToString() + "Points";
         Time.timeScale = 0; //pause time in the game
         GameOverMenuOnOff.SetActive(true); //turn on Game Over Menu
         isGameOver = true; //set isGameOver boolean to true
 
-        mainMenu.onClick.AddListener(LoadGameScene); //main menu button loads main menu on click
-        exitButton.onClick.AddListener(OnApplicationQuit);
 
     }
 

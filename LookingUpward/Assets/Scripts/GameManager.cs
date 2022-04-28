@@ -6,12 +6,16 @@ using UnityEngine.UI;
 //if player wins load next scene
 public class GameManager : MonoBehaviour
 {
+   
     public string gameSceneName;
     public string MainMenu;
 
+
+
     public bool playerwins; //boolean to determine if player won
                             
-                          
+           
+             
     // LoadGameScene method
     public void LoadGameScene()
     {

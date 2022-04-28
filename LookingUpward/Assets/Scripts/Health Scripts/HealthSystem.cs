@@ -7,6 +7,8 @@ public class HealthSystem : MonoBehaviour
 {   [Header("Health")] 
     [SerializeField] private float startingMadness;
 
+    private GameOver gameOver;
+    private DetectCollision detectcollision;
     public float currentMadness { get; private set; }
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
@@ -14,6 +16,7 @@ public class HealthSystem : MonoBehaviour
     private Animator anim; //reference to animator
 
     private bool dead;
+    public int score;
 
     [Header("iFrames")]
 
@@ -72,6 +75,11 @@ public class HealthSystem : MonoBehaviour
             }
           
         }
+        if(dead)
+        {
+            score = detectcollision.CurrentScore();//set score equal to current score
+            gameOver.TurnOnGameOver(score);//turn on game ovber menu and pass score
+        }
     }
     public void TakeMadnessDamage(float damageTaken)
     {
@@ -100,6 +108,11 @@ public class HealthSystem : MonoBehaviour
 
             }
             }
+        if (dead)
+        {
+            score = detectcollision.CurrentScore();//set score equal to current score
+            gameOver.TurnOnGameOver(score);//turn on game ovber menu and pass score
+        }
     }
    public void AddHealth(float _value)
     {

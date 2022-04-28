@@ -37,9 +37,10 @@ public class DetectCollision : MonoBehaviour
         Debug.Log("the score is" + currentscore);
     }
 
-    public void CurrentScore()
+    public int CurrentScore()
     {
         score = currentscore;
+        return score;
     }
     public void AddScore(int _value)
     {

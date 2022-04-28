@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private AudioClip attackSound;
 
     private Animator anim;
-    private NewPlayerMovement newplayerMovement;
+  private NewPlayerMovement newplayerMovement;
     private float cooldownTimer = Mathf.Infinity;
      private void Awake()
     {
